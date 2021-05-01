@@ -1,0 +1,26 @@
+<div class="animate__animated animate__bounce animate__faster">
+  <h2>Calculando año bisiestro</h2>
+  <p>Ingresar numero</p>
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit)="calcular()" autocomplete="off">
+        <label for="numero">Numero</label>
+        <input
+          type="number"
+          name="numero"
+          class="form-control"
+          [(ngModel)]="numero"
+          placeholder="poner year"
+        />
+        <br />
+        <button type="submit" class="btn btn-warning">Calcular</button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <div *ngIf="mostrar" class="alert alert-warning">
+    El año {{ introdujo }} {{ resultado }}
+  </div>
+</div>

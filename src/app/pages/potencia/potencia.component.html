@@ -1,0 +1,34 @@
+<div class="animate__animated animate__bounce animate__faster">
+  <h2>Ejemplo Calculando potencia</h2>
+  <p>Ingresar base y exponente</p>
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit)="calcular()" autocomplete="off">
+        <label for="base">Numero1</label>
+        <input
+          type="number"
+          name="base"
+          class="form-control"
+          [(ngModel)]="base"
+          placeholder="poner base"
+        />
+        <label for="exponente">Exponente</label>
+        <input
+          type="number"
+          name="exponente"
+          class="form-control"
+          [(ngModel)]="exponente"
+          placeholder="poner exponente"
+        />
+        <br />
+        <button type="submit" class="btn btn-dark">calcular</button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <div *ngIf="resultado" class="alert alert-dark">
+    La potencia es {{ potencia }}
+  </div>
+</div>

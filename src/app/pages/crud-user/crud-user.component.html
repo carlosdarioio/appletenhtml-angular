@@ -1,0 +1,36 @@
+<p>Usuarios</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>Lista de usuarios</h2>
+      <p>
+        <a href="agregar">Agregar Nuevo</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Usuario</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios; let i = index">
+            <td>{{ i }}</td>
+            <td>{{ usuario.User }}</td>
+            <td><a [routerLink]="['/editar', usuario.IdUser]">Editar </a></td>
+            <td>Borrar</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

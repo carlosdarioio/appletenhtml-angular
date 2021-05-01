@@ -1,0 +1,40 @@
+<div class="animate__animated animate__bounce animate__faster">
+  <h5>Mostrando la tabla multiplicativa del numero ingresado</h5>
+  <small>Ejemplo de ngFor</small>
+  <p>Ingresar numero</p>
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit)="calcular()" autocomplete="off">
+        <input
+          type="number"
+          name="numero"
+          class="form-control"
+          [(ngModel)]="numero"
+          placeholder="poner numero"
+        />
+        <br />
+      </form>
+    </div>
+  </div>
+  <hr />
+  <table class="table table-hover" *ngIf="numero > 0">
+    <thead>
+      <tr>
+        <th>formula</th>
+        <th>resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--tarea3 ngForde paises y rellenar tofo-->
+      <tr
+        *ngFor="let n of numeros"
+        class="animate__animated animate__fadeIn animate__faster"
+      >
+        <td>{{ numero }} x {{ n }}</td>
+        <td>{{ n * numero }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
