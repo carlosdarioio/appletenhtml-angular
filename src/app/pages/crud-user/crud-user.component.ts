@@ -4,7 +4,7 @@ import { Observable, pipe } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { PaisService } from 'src/app/services/users.service';
 import { Usersmodel } from 'src/app/interfaces/user.interfaces';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-crud-user',
   templateUrl: './crud-user.component.html',
@@ -17,16 +17,24 @@ export class CrudUserComponent implements OnInit {
   hayError: boolean = false;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private paisService: PaisService
+    private heroesService: PaisService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.paisService.getUsers().subscribe(
+    this.heroesService.getUsers().subscribe(
       (paises) => {
         this.usuarios = paises;
         console.log(paises);
       },
       (err) => (this.usuarios = [])
     );
+  }
+
+  borrarHeroe(Id: number) {
+    this.heroesService.borrarHeroe(Id).subscribe((resp) => {
+      //this.router.navigate(['crudusers']);
+      window.location.reload();
+    });
   }
 }

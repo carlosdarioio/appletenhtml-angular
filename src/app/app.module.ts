@@ -13,6 +13,7 @@ import { CicloForComponent } from './pages/ciclo-for/ciclo-for.component';
 import { CrudUserComponent } from './pages/crud-user/crud-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsernewComponent } from './pages/usernew/usernew.component';
+import { UsereditComponent } from './pages/useredit/useredit.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UsernewComponent } from './pages/usernew/usernew.component';
     CicloForComponent,
     CrudUserComponent,
     UsernewComponent,
+    UsereditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   exports: [SidebarComponent],

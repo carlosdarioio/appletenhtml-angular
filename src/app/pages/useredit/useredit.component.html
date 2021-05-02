@@ -1,0 +1,30 @@
+<div class="animate__animated animate__bounce animate__faster">
+  <h2>Editando Usuario</h2>
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit)="editar()" autocomplete="off">
+        <label for="numero">Usuario</label>
+        <input
+          type="text"
+          name="Usuario"
+          class="form-control"
+          [(ngModel)]="usuario.User"
+          placeholder="poner usuario"
+        />
+        <label for="numero">Contraseña</label>
+        <input
+          type="password"
+          name="Password"
+          class="form-control"
+          [(ngModel)]="usuario.Password"
+          placeholder="poner clave"
+        />
+        <br />
+        <button type="submit" class="btn btn-warning">Update</button>
+      </form>
+    </div>
+  </div>
+  <hr />
+</div>

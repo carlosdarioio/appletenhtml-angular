@@ -7,6 +7,7 @@ import { PotenciaComponent } from './pages/potencia/potencia.component';
 import { CicloForComponent } from './pages/ciclo-for/ciclo-for.component';
 import { CrudUserComponent } from './pages/crud-user/crud-user.component';
 import { UsernewComponent } from './pages/usernew/usernew.component';
+import { UsereditComponent } from './pages/useredit/useredit.component';
 
 //añadiendo rutas padres
 const routes: Routes = [
@@ -38,7 +39,7 @@ const routes: Routes = [
     component: CrudUserComponent,
   },
   { path: 'agregar', component: UsernewComponent },
-  //{ path: 'editar/:id', component: UsernewComponent },
+  { path: 'editar/:id', component: UsereditComponent },
 
   {
     //redirect 404/home por defecto

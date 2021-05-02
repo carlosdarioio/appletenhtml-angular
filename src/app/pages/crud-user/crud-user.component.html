@@ -27,7 +27,15 @@
             <td>{{ i }}</td>
             <td>{{ usuario.User }}</td>
             <td><a [routerLink]="['/editar', usuario.IdUser]">Editar </a></td>
-            <td>Borrar</td>
+            <td>
+              <button
+                mat-raised-button
+                color="warn"
+                (click)="borrarHeroe(usuario.IdUser)"
+              >
+                Borrar
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>

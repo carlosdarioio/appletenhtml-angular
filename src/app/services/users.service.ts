@@ -24,11 +24,21 @@ export class PaisService {
 
   getHeroePorId(id: string): Observable<Usersmodel> {
     return this.http.get<Usersmodel>(
-      `${this.apiUrl}/?api=usersgetbyid&id=${id}`
+      `${this.apiUrl}/?api=usersgetbyid&q=${id}`
     );
   }
 
   agregarHeroe(heroe: Usersmodel): Observable<Usersmodel> {
     return this.http.post<Usersmodel>(`${this.apiUrl}/?api=usernew`, heroe);
   }
+
+  actualizarUsuario(heroe: Usersmodel): Observable<Usersmodel> {
+    return this.http.put<Usersmodel>(`${this.apiUrl}/?api=useredit`, heroe);
+  }
+
+  borrarHeroe(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/?api=userdelete&q=${id}`);
+  }
+
+  //http://localhost:8080/backendphp/?api=useredit
 }
